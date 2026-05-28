@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cutelaria · Automatización Empresarial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Cutelaria</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a href="#contacto" class="btn btn-primary btn-sm">Solicitar Demo</a>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Animated grid background -->
+    <div class="hero-grid" aria-hidden="true"></div>
+    <!-- Glowing orbs -->
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <span class="hero-badge">🤖 Automatización con IA</span>
+      <h1 class="hero-title">
+        <span class="brand-name">Comercial Don Francisco</span><br />
+        <span class="hero-sub">ventas automáticas,<br/>clientes felices.</span>
+      </h1>
+      <p class="hero-desc">
+        Sistema de automatización para ventas y atención al cliente.<br />
+        Conectado con WhatsApp, Facebook, Instagram y n8n.
+      </p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary btn-lg">Solicitar Demo</a>
+        <a href="#servicios" class="btn btn-ghost btn-lg">Ver servicios ↓</a>
+      </div>
+      <!-- Floating stats -->
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Atención</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">+300%</span><span class="stat-label">Productividad</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">IA</span><span class="stat-label">Integrada</span></div>
+      </div>
+    </div>
+
+    <!-- Hero visual mockup -->
+    <div class="hero-visual">
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="mockup-title">WhatsApp · Comercial Don Francisco Bot</span>
+        </div>
+        <div class="mockup-body" id="mockupChat"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICIOS
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Funcionalidades</span>
+        <h2 class="section-title">Todo lo que necesitas<br /><em>en un solo sistema</em></h2>
+        <p class="section-desc">Automatiza cada punto de contacto con tus clientes desde una sola plataforma.</p>
+      </div>
+      <div class="grid-services" id="gridServicios">
+        <!-- Renderizado dinámico por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PRODUCTOS
+  ═══════════════════════════════════════════ -->
+  <section class="section section-dark" id="productos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Catálogo digital</span>
+        <h2 class="section-title">Nuestros <em>productos</em></h2>
+        <p class="section-desc">Electrodomésticos, repuestos y utensilios para el hogar.</p>
+      </div>
+
+      <!-- Buscador -->
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="buscador"
+          class="search-input"
+          placeholder="Buscar producto…"
+          autocomplete="off"
+        />
+        <button class="search-clear" id="searchClear" aria-label="Limpiar">✕</button>
+      </div>
+
+      <!-- Filtros de categoría -->
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-cat="todos">Todos</button>
+        <!-- más botones por JS -->
+      </div>
+
+      <!-- Grid productos -->
+      <div class="grid-products" id="gridProductos">
+        <!-- Renderizado dinámico por JS -->
+      </div>
+
+      <p class="no-results hidden" id="noResults">No se encontraron productos. Intenta otra búsqueda.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="cta-orb cta-orb-1" aria-hidden="true"></div>
+    <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
+    <div class="container cta-inner">
+      <h2 class="cta-title">Automatiza tu negocio<br /><span class="gradient-text">con Inteligencia Artificial</span></h2>
+      <p class="cta-desc">Conecta WhatsApp, catálogo digital y atención automática en minutos.</p>
+      <a
+        href="https://wa.me/59100000000?text=Hola%20Cutelaria%2C%20quiero%20automatizar%20mi%20negocio"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-whatsapp btn-lg"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L0 24l6.334-1.502A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.983-1.357l-.358-.213-3.754.89.953-3.665-.234-.376A9.795 9.795 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+        Chatear por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FORMULARIO / CONTACTO (n8n webhook)
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="contacto">
+    <div class="container form-container">
+      <div class="form-info">
+        <span class="section-tag">Demo gratuita</span>
+        <h2 class="section-title">Hablemos de<br /><em>tu negocio</em></h2>
+        <p class="section-desc">Completa el formulario y un asesor te contactará en menos de 24 horas.</p>
+        <ul class="form-perks">
+          <li>✅ Configuración en menos de 48 hs</li>
+          <li>✅ Sin costos de instalación</li>
+          <li>✅ Soporte personalizado</li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required />
+            <span class="field-error" id="errNombre"></span>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: +591 7XXXXXXX" required />
+            <span class="field-error" id="errTelefono"></span>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">¿Qué necesitas automatizar?</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu negocio…" required></textarea>
+            <span class="field-error" id="errMensaje"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <span class="btn-text">Enviar solicitud</span>
+            <span class="btn-loader hidden">Enviando…</span>
+          </button>
+          <p class="form-legal">Al enviar aceptas que te contactemos por WhatsApp.</p>
+        </form>
+        <div class="form-success hidden" id="formSuccess">
+          <div class="success-icon">🎉</div>
+          <h3>¡Solicitud enviada!</h3>
+          <p>Te contactaremos pronto. Mientras tanto, puedes escribirnos por WhatsApp.</p>
+          <a href="#" class="btn btn-ghost" id="resetForm">Enviar otra solicitud</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Cutelaria</span>
+        <p class="footer-tagline">Automatización inteligente para comercios modernos.</p>
+      </div>
+      <div class="footer-links">
+        <span class="footer-col-title">Sistema</span>
+        <a href="#servicios">Servicios</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Demo</a>
+      </div>
+      <div class="footer-links">
+        <span class="footer-col-title">Contacto</span>
+        <a href="https://wa.me/59100000000" target="_blank">WhatsApp</a>
+        <a href="mailto:hola@cutelaria.com">Email</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Cutelaria · Comercial. Todos los derechos reservados.</p>
+      <p>Powered by <strong>n8n</strong> + <strong>IA</strong></p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a
+    href="https://wa.me/59100000000?text=Hola%20Cutelaria%2C%20quiero%20informaci%C3%B3n"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-fab"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L0 24l6.334-1.502A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.983-1.357l-.358-.213-3.754.89.953-3.665-.234-.376A9.795 9.795 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
